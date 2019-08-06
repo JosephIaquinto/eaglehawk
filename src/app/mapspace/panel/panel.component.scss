@@ -1,0 +1,11 @@
+.mat-card {
+  position: absolute;
+  z-index: 1;
+  min-height: 200px;
+  max-height: calc(100% - 80px);
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+  margin: 40px;
+  padding: 0;
+}

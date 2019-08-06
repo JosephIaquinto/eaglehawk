@@ -1,0 +1,19 @@
+:host {
+  z-index: 1;
+  position: relative;
+  display: block;
+  height: 64px;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  height: 100%;
+  margin-right: 10px;
+}
