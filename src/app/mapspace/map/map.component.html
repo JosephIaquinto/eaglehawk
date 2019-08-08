@@ -1,1 +1,18 @@
-<mgl-map [style]="'mapbox://styles/tvorpahl/cjz08z2nw175i1cmhqxf35mbk'" [zoom]="[18]" [center]="[-73.690060, 42.732286]"> </mgl-map>
+<mgl-map
+  #map
+  [style]="'mapbox://styles/tvorpahl/cjz08z2nw175i1cmhqxf35mbk'"
+  [zoom]="[18]"
+  [center]="[-73.69006, 42.732286]"
+>
+  <ng-container *ngFor="let feature of mapspaceService.selectedArea.features">
+    <mgl-layer
+      [id]="feature.layer.id"
+      type="fill"
+      [source]="feature.layer.source"
+      [paint]="{
+        'fill-color': 'red',
+        'fill-opacity': 0.5
+      }"
+    ></mgl-layer>
+  </ng-container>
+</mgl-map>

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Add Feature</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.selectedArea" [compareWith]="compareAreas">
+      <mat-option *ngFor="let area of data.areas" [value]="area">{{ area.name }}</mat-option>
+    </mat-select>
+    <mat-placeholder>
+      <div class="title">Area</div>
+    </mat-placeholder>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.featureName"/>
+    <mat-placeholder>
+      <div class="title">Feature Name</div>
+    </mat-placeholder>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+</div>

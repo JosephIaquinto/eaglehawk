@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^8.2.0",
@@ -21,6 +26,8 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@mapbox/mapbox-gl-draw": "^1.1.2",
+    "@turf/turf": "^5.1.6",
     "mapbox-gl": "^0.54.0",
     "ngx-mapbox-gl": "^3.3.1",
     "rxjs": "~6.5.2",

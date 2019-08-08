@@ -1,1 +1,46 @@
-<mat-card></mat-card>
+<mat-card>
+  <div class="areas">
+    <mat-form-field>
+      <mat-select [(ngModel)]="mapspaceService.selectedArea" [compareWith]="compareAreas">
+        <mat-option *ngFor="let area of mapspaceService.areas" [value]="area">{{ area.name }}</mat-option>
+      </mat-select>
+      <mat-placeholder>
+        <mat-icon class="icon">map</mat-icon>
+        <div class="title">Area</div>
+      </mat-placeholder>
+    </mat-form-field>
+  </div>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <ng-container *ngFor="let feature of mapspaceService.selectedArea.features">
+        <mat-list-item>
+          <div class="feature">
+            <div class="description">
+              <div class="status red"></div>
+              <div class="name">{{ feature.name }}</div>
+            </div>
+            <div class="actions">
+              <button mat-icon-button>
+                <mat-icon>my_location</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="addFeature()">
+      <mat-icon [style.marginRight.px]="5">add_circle_outline</mat-icon>
+      <span>Add Feature</span>
+    </button>
+  </mat-card-actions>
+</mat-card>

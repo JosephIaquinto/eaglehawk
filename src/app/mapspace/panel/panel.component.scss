@@ -1,11 +1,60 @@
+.areas {
+  .mat-form-field {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+  }
+  .icon {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  .title {
+    font-size: 16px;
+    display: inline-block;
+    position: absolute;
+  }
+}
+
+.mat-option {
+  font-size: 16px !important;
+  height: 40px !important;
+}
+
 .mat-card {
   position: absolute;
   z-index: 1;
   min-height: 200px;
-  max-height: calc(100% - 80px);
+  max-height: calc(100% - 40px);
   width: 100%;
   max-width: 400px;
   min-width: 200px;
-  margin: 40px;
-  padding: 0;
+  margin: 10px;
+}
+
+.mat-card-avatar {
+  font-size: 40px;
+}
+
+.feature {
+  display: flex;
+  width: 100%;
+  .description {
+    display: flex;
+    flex: auto;
+    line-height: 40px;
+    .status {
+      $diameter: 14px;
+      height: $diameter;
+      width: $diameter;
+      border-radius: $diameter;
+      margin: auto 10px auto 0;
+      &.red {
+        background-color: red;
+      }
+      &.green {
+        background-color: green;
+      }
+    }
+  }
+  .actions {
+  }
 }
