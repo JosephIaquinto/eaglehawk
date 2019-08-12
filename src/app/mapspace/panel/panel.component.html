@@ -21,15 +21,25 @@
               <div class="name">{{ feature.name }}</div>
             </div>
             <div class="actions">
-              <button mat-icon-button>
+              <button mat-icon-button (click)="zoomToFeature(feature)">
                 <mat-icon>my_location</mat-icon>
               </button>
-              <button mat-icon-button>
+              <button mat-icon-button (click)="removeFeature(feature)">
                 <mat-icon>delete_outline</mat-icon>
               </button>
-              <button mat-icon-button>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon>more_vert</mat-icon>
               </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>add_a_photo</mat-icon>
+                  <span>Add Imagery</span>
+                </button>
+              </mat-menu>
             </div>
           </div>
         </mat-list-item>

@@ -1,3 +1,4 @@
+import { MapspaceFeature } from './../../shared/models/mapspace-feature';
 import { MapspaceService } from './../mapspace.service';
 import { MapspaceArea } from '../../shared/models/mapspace-area';
 import { Component, OnInit } from '@angular/core';
@@ -18,5 +19,13 @@ export class PanelComponent implements OnInit {
 
   addFeature() {
     this.mapspaceService.addFeatureEvent.emit();
+  }
+
+  zoomToFeature(feature: MapspaceFeature) {
+    this.mapspaceService.zoomToFeatureEvent.emit(feature);
+  }
+
+  removeFeature(feature: MapspaceFeature) {
+    this.mapspaceService.removeFeatureEvent.emit(feature);
   }
 }
