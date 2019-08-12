@@ -29,6 +29,12 @@
   margin: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+  .mat-card {
+    max-width: calc(100% - 75px);
+  }
+}
+
 .mat-card-avatar {
   font-size: 40px;
 }
