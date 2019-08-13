@@ -88,7 +88,7 @@ export class MapspaceMapComponent implements OnInit, AfterViewInit, OnDestroy {
         type: 'fill',
         source: geoJsonLayerRaw,
         paint: {
-          'fill-color': 'red',
+          'fill-color': result.status,
           'fill-opacity': 0.5
         }
       };
@@ -97,7 +97,8 @@ export class MapspaceMapComponent implements OnInit, AfterViewInit, OnDestroy {
 
       area.features.push({
         name: result.featureName,
-        layer
+        layer,
+        status: result.status
       });
     });
   }

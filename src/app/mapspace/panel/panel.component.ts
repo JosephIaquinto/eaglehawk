@@ -28,4 +28,8 @@ export class PanelComponent implements OnInit {
   removeFeature(feature: MapspaceFeature) {
     this.mapspaceService.removeFeatureEvent.emit(feature);
   }
+
+  editFeature(feature: MapspaceFeature) {
+
+  }
 }
